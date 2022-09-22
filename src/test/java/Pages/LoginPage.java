@@ -13,7 +13,7 @@ import java.time.Duration;
 public class LoginPage {
     WebDriver driver;
     By username = By.xpath("//input[@name='user-name']");
-    By loginPassword = By.xpath("//input[@name='password']']");
+    By loginPassword = By.xpath("//input[@name='password']");
     By loginButton = By.xpath("//input[@name='login-button']");
     By homePageVerify = By.xpath("//span[@class='title']");
 

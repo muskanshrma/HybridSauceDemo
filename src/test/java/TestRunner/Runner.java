@@ -6,9 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"C:\\Users\\MuskanSharma\\IdeaProjects\\NopCucumber\\src\\test\\java\\FeatureFiles\\Login.feature"},
+        features = {"C:\\Users\\MuskanSharma\\IdeaProjects\\Hybrid\\src\\test\\java\\FeatureFiles"},
         glue = {"StepDefinition"},
-        dryRun = true
+        monochrome = true,
+        plugin = {"pretty","json:Report/Cucumber.json","junit:Report/XMLReport.xml",
+                "html:Report/cucumberReport"}
 )
 
 public class Runner{

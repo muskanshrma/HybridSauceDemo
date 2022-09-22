@@ -1,9 +1,7 @@
-Feature: Login
+Feature: Login and product checkout
 
-  Scenario Outline: Successful Login with Valid Credentials
-    Given user is on login page
-    When User enter "<username>" and "<password>"
-
-    Examples:
-      | username                | password     |
-      | standard_user           | secret_sauce |
+  Scenario: Successful Login with Valid Credentials and Add item to cart and checkout
+    Given User enter username and password and clicks on login button
+    When user adds item to cart and clicks on checkout button
+    And User enters details
+    Then Order is placed

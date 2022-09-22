@@ -1,21 +1,31 @@
 package StepDefinition;
 
-import Pages.BaseClass;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import java.io.IOException;
-
 
 public class StepDefinition extends BaseClass {
 
-    @Given("user is on login page")
-    public void addToCart() throws IOException {
+    @Given("User enter username and password and clicks on login button")
+    public void login() throws IOException {
+        setup("chrome");
         pageFactory.getLoginPage().login();
     }
 
-    @When("User enter {string} and {string}")
-    public void userEnterAnd(String userName, String password) {
-        System.out.println("I am here");
+    @When("user adds item to cart and clicks on checkout button")
+    public void checkoutCart() {
+        pageFactory.getAddToCartAndCheckout().addToCart();
+    }
+
+    @And("User enters details")
+    public void userDetails() {
+    pageFactory.getEnterUserInfo().checkoutDetails();
+    }
+
+    @Then("Order is placed")
+    public void user_is_on_inventory_page() {
+        pageFactory.getEnterUserInfo().verifyCheckout();
     }
 }
